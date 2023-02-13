@@ -9,5 +9,12 @@ public class TravelClubApp {
      
      String [] beanNames = context.getBeanDefinitionNames();
      System.out.println(Arrays.toString(beanNames));
+      
+      TravelClubCdo clubCdo = new TravelClubCdo("TravelClub", "Test TravelClub");
+      ClubService clubService = context.getBean("ClubService", ClubService.class);
+      
+      String clubId = clubService.registerClub(clubCdo);
+      
+      System.out.println("ID : " + clubId);
    }
 }
