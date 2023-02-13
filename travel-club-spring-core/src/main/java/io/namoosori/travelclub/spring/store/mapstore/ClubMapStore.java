@@ -36,16 +36,16 @@ public class ClubMapStore implements ClubStore {
 
     @Override
     public void update(TravelClub club) {
-
+        clubMap.put(club.getId(), club);
     }
 
     @Override
     public void delete(String clubId) {
-
+        clubMap.remove(clubId);
     }
 
     @Override
     public boolean exists(String clubId) {
-        return false;
+        return clubMap.containsKey(clubId);
     }
 }
