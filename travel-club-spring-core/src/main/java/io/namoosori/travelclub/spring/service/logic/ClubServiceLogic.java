@@ -20,7 +20,9 @@ public class ClubServiceLogic implements ClubService {
 
     @Override
     public String registerClub(TravelClubCdo club) {
-        return clubStore.create(club);
+        TravelClub newClub = new TravelClub(club.getName(), club.getIntro());
+        newClub.checkvalidation();
+        return clubStore.create(newClub);
     }
 
     @Override
