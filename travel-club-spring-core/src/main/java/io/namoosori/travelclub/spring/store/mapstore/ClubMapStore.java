@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 
-@Repository
+@Repository("clubStore")
 public class ClubMapStore implements ClubStore {
 
     private Map<String, TravelClub> clubMap;
