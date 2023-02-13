@@ -9,6 +9,7 @@ import io.namoosori.travelclub.spring.store.mapstore.ClubMapStore;
 
 import java.util.List;
 
+@Service
 public class ClubServiceLogic implements ClubService {
     
     private ClubStore clubStore;
