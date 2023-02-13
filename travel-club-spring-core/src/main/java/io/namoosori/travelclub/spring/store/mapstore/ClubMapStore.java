@@ -46,6 +46,7 @@ public class ClubMapStore implements ClubStore {
 
     @Override
     public boolean exists(String clubId) {
-        return clubMap.containsKey(clubId);
+//         return clubMap.containsKey(clubId);
+        return Optional.ofNullable(clubMap.get(clubId)).isPresent();
     }
 }
