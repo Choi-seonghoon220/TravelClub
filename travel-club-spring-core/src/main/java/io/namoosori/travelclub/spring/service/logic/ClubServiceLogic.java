@@ -13,8 +13,8 @@ public class ClubServiceLogic implements ClubService {
     
     private ClubStore clubStore;
     
-    public ClubServiceLogic() {
-        this.clubStore = new ClubMapStore();
+    public ClubServiceLogic(ClubStroe clubStore) {
+        this.clubStore = clubStore;
     }
 
     @Override
