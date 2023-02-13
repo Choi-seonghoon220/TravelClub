@@ -1,0 +1,47 @@
+package io.namoosori.travelclub.spring.store.mapstore;
+
+import io.namoosori.travelclub.spring.aggregate.club.TravelClub;
+import io.namoosori.travelclub.spring.store.ClubStore;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+public class ClubMapStore implements ClubStore {
+	
+	private Map<String, travelClub> clubMap;
+	
+	public ClubMapStore(){
+		this.clubMap = new LinkedHashMap<>();
+	}
+	
+	@Override
+	public String create(TravelClub club) {
+		return null;
+	}
+	
+	@Override
+	public travelClub retrieve(String clubId) {
+		return null;
+	}
+	
+	@Override
+	public List<TravelClub> retrieveByName(String name) {
+		return null;
+	}
+	
+	@Override
+	public void update(TravelClub club) {
+	
+	}
+	
+	@Override
+	public void delete(String clubId) {
+	
+	}
+	
+	@Override
+	public boolean exists(String clubId) {
+		return false;
+	}
+}
