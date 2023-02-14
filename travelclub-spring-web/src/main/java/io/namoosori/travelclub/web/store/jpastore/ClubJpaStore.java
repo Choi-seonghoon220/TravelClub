@@ -36,7 +36,8 @@ public class ClubJpaStore implements ClubStore {
 
   @Override
   public List<TravelClub> retrieveByName(String name) {
-      return null;
+    List<TravelClubJpo> clubJpos = clubRepository.findAllByName(name);
+    return clubJpos.stream().map(travelClubJpo::toDomain).collect(Collectors.toList());
   }
 
   @Override
