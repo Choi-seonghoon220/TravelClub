@@ -27,21 +27,29 @@ public class ClubServiceLogic implements ClubService {
 
     @Override
     public TravelClub findClubById(String id) {
-        return null;
+        return clubStore.retrieve(id);
     }
 
     @Override
     public List<TravelClub> findClubsByName(String name) {
-        return null;
+        return clubStore.retrieveByName(name);
     }
 
     @Override
     public void modify(String clubId, NameValueList nameValues) {
-
+        TravelClub foundedClub = clubStore.retrieve(clubId);
+        if(foundedClub == null) {
+            throw new NoSuchClubException("No such club with id : " + clubId);
+        }
+        foundedClub.modifyValues(namaValues);
+        clubStore.update(foundedClub);
     }
 
     @Override
     public void remove(String clubId) {
-
+        if(!clubStore.exists(clubId)) {
+            throw new NoSuchClubException("No such club with id : " + clubId);
+        }
+        clubStore.delete(clubId);
     }
 }
