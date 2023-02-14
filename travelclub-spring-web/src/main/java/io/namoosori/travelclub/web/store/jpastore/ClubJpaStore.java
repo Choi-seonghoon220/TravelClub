@@ -41,16 +41,16 @@ public class ClubJpaStore implements ClubStore {
 
   @Override
   public void update(TravelClub club) {
-
+    clubRepository.save(new TravelClubJpo(club));
   }
 
   @Override
   public void delete(String clubId) {
-
+    clubRepository.deleteById(clubId);
   }
 
   @Override
   public boolean exists(String clubId) {
-      return null;
+      return clubRepository.existsById(clubId);
   }
 }
